@@ -22,6 +22,12 @@ Product.init(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
+    stock:{
+      type: DataTypes.INTEGER,
+    },
+    category_id:{
+      type: DataTypes.INTEGER,
+    }
   },
   {
     sequelize,
