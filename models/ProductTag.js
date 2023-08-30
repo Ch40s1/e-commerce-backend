@@ -11,7 +11,6 @@ ProductTag.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // Other columns
     product_id: {
       type: DataTypes.INTEGER,
       references: {
