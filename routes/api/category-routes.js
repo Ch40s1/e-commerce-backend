@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const category = await Category.findByPk(req.params.id, {
-      // JOIN with travellers, using the Trip through table
       include: Product,
     });
 
@@ -35,7 +34,16 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new category
+  Category.create(req.body)
+  .then((categoryData) => {
+
+    res.status(200).json(categoryData);
+
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
 });
 
 router.put('/:id', (req, res) => {
