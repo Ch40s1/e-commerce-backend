@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   try {
+    // holds the data for the id. look for it by the primary key
     const category = await Category.findByPk(req.params.id, {
       include: Product,
     });
@@ -34,6 +35,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  // creates a new value and add it to the database
   Category.create(req.body)
   .then((categoryData) => {
 
@@ -46,22 +48,27 @@ router.post('/', (req, res) => {
   });
 });
 
+
 router.put('/:id', async (req, res) => {
+  // try and catch method
   try {
+    // creates a variable that holds the updated data
     const updatedCategory = await Category.update(
       req.body,
       {
+        // id matches the /api/categories/:id
         where: {
           id: req.params.id,
         },
       }
     );
-
+      // if the beinning value of the array is still the same then nothing happened
     if (updatedCategory[0] === 0) {
+      // respond with 404
       res.status(404).json({ message: 'No category with that id!' });
       return;
     }
-
+    // othewise give back a 200
     res.status(200).json({ message: 'Category updated successfully!' });
   } catch (err) {
     console.error(err);
@@ -71,17 +78,18 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
+    // variable holds the deleted data
     const deletedCategory = await Category.destroy({
       where: {
         id: req.params.id,
       },
     });
-
+    // if it did not succeed then there is no category with that id
     if (!deletedCategory) {
       res.status(404).json({ message: 'No category with that id!' });
       return;
     }
-
+    // respond with a 200 is seccessfull
     res.status(200).json({ message: 'Category deleted successfully!' });
   } catch (err) {
     console.error(err);
