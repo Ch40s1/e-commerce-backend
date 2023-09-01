@@ -64,12 +64,14 @@ Note: Because this project uses mysql it is important to have login credentials.
 # Contributors
 
 ASK BCS - Seeding data error.
+
 Ramon Sanchez (tutor) - Sequelize error, and general express.
 
 
 ## Questions
-Github: https://github.com/Ch40s1
+### Contact Links
+<a href='https://github.com/Ch40s1'>Github</a>
 
-Email: zaratedaniel67@gmail.com email me for any questions.
+ <a href='zaratedaniel67@gmail.com'>Email</a> me for any questions.
 
-Video Walkthrough: https://drive.google.com/file/d/1IUSoz2Y93jO0TmnaUI-HF9qTsHipA_xa/view
+Video Walkthrough: <a href='https://drive.google.com/file/d/1IUSoz2Y93jO0TmnaUI-HF9qTsHipA_xa/view'>Video Link</a>
