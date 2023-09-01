@@ -72,4 +72,4 @@ Github: https://github.com/Ch40s1
 
 Email: zaratedaniel67@gmail.com email me for any questions.
 
-Video Walkthrough:
+Video Walkthrough: https://drive.google.com/file/d/1IUSoz2Y93jO0TmnaUI-HF9qTsHipA_xa/view
